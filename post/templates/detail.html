@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail volunteer</title>
+</head>
+<body>
+    <div>
+        <h3>{{volunteer_detail.name}}</h3>
+        <h3>{{volunteer_detail.age}}</h3>
+        <p>{{volunteer_detail.text}}</p>
+        <p>{{volunteer_detail.gender}}</p>
+        <br>
+        <h3>{{volunteer_detail.date}}</h3>
+        <a href="{% url 'update' volunteer_detail.id %}"><span>수정하기</span></a>
+        <a href="{% url 'delete' volunteer_detail.id %}"><span>삭제하기</span></a>
+        <a href="{% url 'home' %}"><h3>메인으로 가기</h3></a>
+    </div>
+</body>
+</html>
