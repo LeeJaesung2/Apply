@@ -12,6 +12,7 @@
         <h3>{{volunteer_detail.age}}</h3>
         <p>{{volunteer_detail.text}}</p>
         <p>{{volunteer_detail.gender}}</p>
+        <p><img src="{{ volunteer_detail.image.url }}" alt=""></p>
         <br>
         <h3>{{volunteer_detail.date}}</h3>
         <a href="{% url 'update' volunteer_detail.id %}"><span>수정하기</span></a>

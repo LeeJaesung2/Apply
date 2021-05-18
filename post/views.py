@@ -14,7 +14,7 @@ def detail(request,volunteer_id):
 
 def apply(request):
     if request.method == "POST":
-        form = CreatePostForm(request.POST)
+        form = CreatePostForm(request.POST,request.FILES)
         if form.is_valid():
             volunteer = form.save(commit=False)
             volunteer.date = timezone.datetime.now()
@@ -27,7 +27,7 @@ def apply(request):
 def update(request,volunteer_id):
     volunteer = Volunteer.objects.get(id=volunteer_id)
     if request.method == "POST":
-        form = CreatePostForm(request.POST,instance=volunteer)
+        form = CreatePostForm(request.POST,request.FILES, instance=volunteer)
         if form.is_valid():
             volunteer = form.save()
             return redirect('/detail/'+str(volunteer.id))
