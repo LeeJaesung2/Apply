@@ -1,3 +1,44 @@
 body{
-    background-color: cyan;
+    position: relative;
+    text-align: center;
+}
+
+.banner{
+    background-color: black;
+    border-bottom: 1px solid #032044;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.bannerimage{
+    text-align: left;
+}
+
+.people{
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    border: 2px solid black;
+    margin: 20px;
+    text-align: left;
+
+}
+.text{
+    background-color: rgb(247, 247, 247);
+}
+
+.botton{
+    display: inline-flex;
+    height: 40px;
+}
+
+.apply{
+    text-align: right;
+}
+
+#botton{
+    padding: 5px;
+    border: 1px solid black;
+    
 }

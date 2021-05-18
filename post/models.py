@@ -14,3 +14,9 @@ class Volunteer(models.Model):
     text=models.TextField()
     date=models.DateTimeField()
     image = models.ImageField(upload_to="post_img",blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+    def summary(self):
+        return self.text[:100]

@@ -8,22 +8,39 @@
     <title>Apply home</title>
     <link rel="stylesheet" href="{% static 'css/homestyle.css' %}">
     <div class="banner">
-        <ul>
-            <img src="{% static 'image/멋쟁이사자.jpg' %}" alt="" height="30px" width="30px">
+        <ul  class="bannerimage">
+            <a href="{% url 'home' %}"><img src="{% static 'image/멋쟁이사자.jpg' %}" alt="" height="40px" width="40px"></a>
         </ul>
-
     </div>
+    <br><br><br><br>
 </head>
+
 <body>
     <div>
         {%for volunteer in person.all%}
-        <div>
-            <a href="{% url 'detail' volunteer.id %}"><h3>{{volunteer.name}}</h3></a>
+        <div class="people">
+
+            <div class="image">
+                <img src="{{ volunteer.image.url }}" alt="" height="200px" width="250px">
+            </div>
+
+            <div class="text">
+                <h3>{{volunteer.name}}({{volunteer.age}}, {{volunteer.gender}})</h3>
+                <h5><p>{{volunteer.summary}}</p></h5>
+                <div class="botton">
+                    <a href="{% url 'detail' volunteer.id %}" id="botton">view</a>
+                    <a href="{% url 'update' volunteer.id %}" id="botton">edit</a>
+                </div> 
+            </div>
+
         </div>
         {%endfor%}
-        <div>
-            <a href="{% url 'apply' %}"><h4>지원하기</h4></a>
-        </div>
     </div>
 </body>
+
+<footer class="apply">
+    <div>
+        <a href="{% url 'apply' %}"><h3>지원하기</h3></a>
+    </div>
+</footer>
 </html>
