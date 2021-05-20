@@ -13,7 +13,7 @@ class Volunteer(models.Model):
     gender=models.CharField(max_length=6,choices=GENDER_CHOICE)
     text=models.TextField()
     date=models.DateTimeField()
-    image = models.ImageField(upload_to="post_img",blank=True, null=True)
+    image = models.ImageField(upload_to="post_img/",blank=True, null=True)
 
     def __str__(self):
         return self.name
