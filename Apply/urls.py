@@ -28,5 +28,5 @@ urlpatterns = [
     path('apply',views.apply,name='apply'),
     path('update/<int:volunteer_id>/',views.update,name='update'),
     path('delete/<int:volunteer_id>/',views.delete,name='delete'),
-    url(r'^media/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT,})
+    url(r'^media/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT}),
 ]+ static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)
