@@ -20,9 +20,13 @@
         {%for volunteer in person.all%}
         <div class="people">
 
+            {% if volunteer.image %}
             <div class="image">
                 <img src="{{ volunteer.image.url }}" alt="" height="200px" width="250px">
             </div>
+            {% else %}
+            <p>사진없음</p>
+            {% endif %}
 
             <div class="text">
                 <h3>{{volunteer.name}}({{volunteer.age}}, {{volunteer.gender}})</h3>
