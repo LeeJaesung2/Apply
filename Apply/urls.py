@@ -25,5 +25,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name="home"),
     path('post/', include('post.urls')),
+    path('account/',include('account.urls')),
     url(r'^media/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT}),
 ]+ static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)
