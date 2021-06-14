@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-v)w!h#7=ehe6#ztg0p-kw$rjg=_fbveuj2nma(qcl_dbt8a(o&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.herokuapp.com']
 
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'Apply.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['post/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

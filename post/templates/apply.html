@@ -1,36 +1,11 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply</title>
-    <link rel="stylesheet" href="{% static 'css/applystyle.css' %}">
-    <div class="banner">
-        <ul  class="bannerimage">
-            <a href="{% url 'home' %}"><img src="{% static 'image/멋쟁이사자.jpg' %}" alt="" height="40px" width="40px"></a>
-        </ul>
-    </div>
-    <br><br><br><br>
-</head>
+{% extends 'base.html' %}
+
+{% block content %}
 <body>
     <form action="" method="POST" enctype="multipart/form-data">
         {%csrf_token%}
-        <!-- <p>이름: <input type="text" name="name"></p>
-        <p>나이: <input type="int" name="age"></p>
-        <p>성별:</p>
-        <select name="gender">
-            <option value="남자">남자</option>
-            <option value="여자">여자</option>
-        </select> -->
-        <!-- <div>
-            <input type="radio" name="gender" value="남자">남자
-            <input type="radio" name="gender" value="여자">여자
-        </div> -->
-
-        <!-- <p>지원 한마디:</p><textarea name="text" id="" cols="30" rows="10"></textarea> -->
         {{form.as_p}}
         <button type="submit">제출</button> 
 </body>
-</html>
+
+    {% endblock %}

@@ -1,19 +1,6 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail volunteer</title>
-    <link rel="stylesheet" href="{% static 'css/detailstyle.css' %}">
-    <div class="banner">
-        <ul  class="bannerimage">
-            <a href="{% url 'home' %}"><img src="{% static 'image/멋쟁이사자.jpg' %}" alt="" height="40px" width="40px"></a>
-        </ul>
-    </div>
-    <br><br><br><br>
-</head>
+{% extends 'base.html' %}
+
+{% block content %}
 <body>
     <div>
         <h3>{{volunteer_detail.name}}</h3>
@@ -28,4 +15,4 @@
         <a href="{% url 'home' %}"><h3>메인으로 가기</h3></a>
     </div>
 </body>
-</html>
+{% endblock %}
